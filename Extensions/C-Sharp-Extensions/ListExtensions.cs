@@ -42,21 +42,30 @@
         /// <param name="index"></param>
         public static void MoveElements<T>(this List<T> list, List<T> listSubset, int index)
         {
-            int currentIndex = index;
-            T t = list[index];
-            for (int i = 0; i < listSubset.Count; i++)
-            {
-                int sIndex = list.IndexOf(listSubset[i]);             
-                    
-                if (sIndex < currentIndex) currentIndex--;
-                list.MoveElement(sIndex, currentIndex);
-                currentIndex = list.IndexOf(t);
+            List<T> tmp = new List<T>(listSubset);
 
+          
+
+            for (int i = listSubset.Count - 1; i >= 0; i--)
+            {
+                if (list.IndexOf(listSubset[i]) < index)
+                {
+                    index--;
+                }
+                list.Remove(listSubset[i]);
             }
+
+            for (int i = tmp.Count - 1; i >= 0; i--)
+            {
+                list.Insert(index, tmp[i]);
+            }
+
+            
 
         }
 
 
+       
 
     }
 }

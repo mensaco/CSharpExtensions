@@ -4,37 +4,30 @@ using Extensions;
 
 List<string> list = new()
 {
-    "zero",
-    "nje",
-    "dy",
-    "tre",
-    "kater",
-    "pese",
-    "gjashte",
-    "shtate",
-    "tete",
-    "nente",
-    "dhjete"
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+
 };
 
 Console.WriteLine(string.Join(',', list));
+Console.WriteLine();
 
+int i = 5;
 
-for (int i = 0; i < 10; i++)
+for (i = 0; i < 11; i++)
 {
     list = new()
     {
-        "zero",
-        "nje",
-        "dy",
-        "tre",
-        "kater",
-        "pese",
-        "gjashte",
-        "shtate",
-        "tete",
-        "nente",
-        "dhjete"
+        "0","1","2","3","4","5","6","7","8","9","10"
     };
 
     List<string> subset = new()
